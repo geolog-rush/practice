@@ -3,10 +3,15 @@
 #include <cstdlib>
 #include <cstdio>
 
-int main(int argc, char** args) {
-    if (argc != 2) return 1;
+// QUESTION:
+//
+// write a function which will print the number (uint32_t) in binary format.
 
-    uint32_t value = atoi(args[1]);
+// SOLUTION:
+//
+// prints e.g. 45 as ' 00000000 00000000 00000000 00101101'
+void printNumber(uint32_t value)
+{
     printf("Source value: %d\n", value);
     const uint32_t bit_number = sizeof(uint32_t) * CHAR_BIT;
     const uint32_t mask = 1 << (bit_number - 1);
@@ -22,4 +27,11 @@ int main(int argc, char** args) {
         value <<= 1;
     }
     putc('\n', stdout);
+}
+
+int main(int argc, char** args) {
+    if (argc != 2) return 1;
+
+    printNumber(atoi(args[1]));
+    return 0;
 }
