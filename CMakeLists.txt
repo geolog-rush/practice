@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.28)
 
-project(zmq_client VERSION 1.0 LANGUAGES CXX)
+project(practice VERSION 1.0 LANGUAGES CXX)
 add_compile_options(-Wpedantic
                     -Wall
                     -Wextra
